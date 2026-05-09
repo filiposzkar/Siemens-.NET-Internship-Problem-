@@ -80,7 +80,7 @@ buikder.Services.AddScoped<IItemReader, ItemRepository>();
 ### 3. Open/Closed Principle
 * **The violation:** In `ItemRepository.cs`, the Open/Closed Principle was broken, because the repository was using a hardcoded list of items, initialized in the constructor. If the data source needs to change, the `ItemRepository.cs` also needs to change, which is against the "open for extension, closed for modification" rule.
 * **The line:** 8
-* **The fix:** It will be resolved in Requirement IV by refactoring the repository to fetch data from an external endpoint.
+* **The fix:** It will be resolved in Task 4 by refactoring the repository to fetch data from an external endpoint.
 
 
 
