@@ -11,5 +11,7 @@ namespace Siemens.Internship2026.GradeBook.Interfaces
     {
         double CalculateAverage(IEnumerable<Item> items);
         int GetTotalCount(IEnumerable<Item> items);
+
+        IEnumerable<Item> GetFirstNPassingGrades(IEnumerable<Item> items, int n);
     }
 }

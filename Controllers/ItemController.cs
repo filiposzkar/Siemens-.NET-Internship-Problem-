@@ -55,4 +55,12 @@ public class ItemController : ControllerBase
 
         return Ok(item);
     }
+
+    [HttpGet("top/{n}")]
+    public async Task<IActionResult> GetTopGrades(int n)
+    {
+        var items = await _reader.GetAllAsync();
+        var topGrades = _gradeService.GetFirstNPassingGrades(items, n);
+        return Ok(topGrades);
+    }
 }

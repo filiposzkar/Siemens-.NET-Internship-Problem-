@@ -20,5 +20,10 @@ namespace Siemens.Internship2026.GradeBook.Services
         {
             return items.Count();
         }
+
+        public IEnumerable<Item> GetFirstNPassingGrades(IEnumerable<Item> items, int n)
+        {
+            return items.Where(i => i.IsActive && i.Value >= 5).Take(n).ToList();
+        }
     }
 }
