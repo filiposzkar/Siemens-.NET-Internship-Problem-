@@ -5,8 +5,19 @@ namespace Siemens.Internship2026.GradeBook.Repositories;
 
 public class ItemRepository : IItemReader
 {
-    protected readonly List<Item> _items = new();
+
+    protected readonly List<Item> _items;
     protected int _nextId = 1;
+
+    public ItemRepository  ()
+    {
+        _items = new List<Item>
+        {
+            new Item { Id = _nextId++, Value = 85, IsActive = true },
+            new Item { Id = _nextId++, Value = 90, IsActive = true },
+            new Item { Id = _nextId++, Value = 78, IsActive = true }
+        };
+    }
 
     public virtual Task<Item?> GetByIdAsync(int id)
     {
